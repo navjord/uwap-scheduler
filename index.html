@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<script data-main="js/main2" src="js/lib/require.js"></script>
+
+<link rel="stylesheet" href="style/dhtmlxscheduler.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="style/bootstrap.min.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="style/dhtmlxscheduler_glossy.css" type="text/css" charset="utf-8">
+
+<style type="text/css" media="screen">
+	html, body{
+		margin:0px;
+		padding:0px;
+		height:100%;
+		overflow:hidden;
+	}	
+	.one_line{
+		white-space:nowrap;
+		overflow:hidden;
+		padding-top:5px; padding-left:5px;
+		text-align:left !important;
+	}
+	input#progchooser{
+		width:40px;
+		height: 12px
+	}
+	.dhx_matrix_scell{
+	background-color: #AEBADA;
+	}
+</style>
+
+</head>
+<body>
+<div id="main"></div>
+<div class="accordion" id="accordion2">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+				Generelt
+			</a>
+		</div>
+		<div id="collapseOne" class="accordion-body collapse in">
+			<div class="accordion-inner"> Legg til en ical-fil: <input id="icaladder" alt="url"></input> 
+				<button id="gcalbutton">Hent Google-kalender</button>
+				<button id="remAll">Slett alt fra databasen</button>
+			</div>
+		</div>
+		<div id="uniaccord" class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+				UNINETT
+			</a>
+		</div>
+			<div id="collapseTwo" class="accordion-body collapse">				
+				<div class="accordion-inner">
+					Legg til uninett-bruker/møterom:<input id="userchooser" alt="brukernavn" ></input>
+
+					Legg til kalenderne fra gruppe: <select id="groupselect" onchange="var tempVar = this.options[this.selectedIndex].value; $.router.set({gr: tempVar});"><option></option></select>
+					
+				</div>
+			</div>
+		
+		
+	</div>
+	
+
+</div>
+
+
+<div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;  background-color: #bfcbeb; '>
+		<div class="dhx_cal_navline" style="background-color: #FFF">
+			<div class="dhx_cal_prev_button">&nbsp;</div>
+			<div class="dhx_cal_next_button">&nbsp;</div>
+			<div class="dhx_cal_today_button"></div>
+			<div class="dhx_cal_date"></div>
+			<div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
+			<div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
+			
+			<div class="dhx_cal_tab" name="timeline_tab" style="right:280px;"></div>
+			<div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+		</div>
+		<div class="dhx_cal_header">
+		</div>
+		<div class="dhx_cal_data">
+		</div>		
+	</div>
+
+
+</body>
+
+
+
+</html>
